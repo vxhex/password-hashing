@@ -101,7 +101,7 @@ class PasswordHash {
     * This implementation of PBKDF2 was originally created by https://defuse.ca
     * With improvements by http://www.variations-of-shadow.com
     */
-    private static function pbkdf2($algorithm, $password, $salt, $count, $key_length, $raw_output = false)
+    public static function pbkdf2($algorithm, $password, $salt, $count, $key_length, $raw_output = false)
     {
         $algorithm = strtolower($algorithm);
         if(!in_array($algorithm, hash_algos(), true))
